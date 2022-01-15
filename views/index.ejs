@@ -14,10 +14,12 @@
         <ul>
             <% for(i of todos) { %>
                 <li>
-                    <%=i.todo%>-
-                        <%=i.done===true?"Done":"Not Done"%>
-
+                    <%= i.todo %> -
+                        <%= i.done === true ? "Done" : "Not Done" %>
                 </li>
+                <form action="/:id?_method=DELETE" method="POST">
+                    <button>DELETE</button>
+                </form>
                 <% } %>
         </ul>
         <% } else { %>
@@ -25,8 +27,8 @@
             <% } %>
                 <hr>
                 <form method="POST" action="/">
-                    <input type="text" name="newtodo" required>
-                    <button type="submit">ADD TO DO</button>
+                    <input type="text " name="newtodo" required>
+                    <button type="submit ">ADD TO DO</button>
                 </form>
 </body>
 

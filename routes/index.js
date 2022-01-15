@@ -26,5 +26,12 @@ router.post("/", function(req, res) {
     });
 });
 
+router.delete('/:id', function(req, res) {
+    let id = req.params.id;
+    let deleteToDo = Todo.getAll()
+    deleteToDo.pop(id);
+    res.redirect('/');
+})
+
 
 module.exports = router;
