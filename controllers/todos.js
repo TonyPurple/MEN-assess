@@ -14,7 +14,6 @@ function index(req, res) {
     res.render('index', {
         title: 'Unit 2 Assessment',
         todos: Todo.getAll(),
-        id: req.body.id
     });
 }
 
