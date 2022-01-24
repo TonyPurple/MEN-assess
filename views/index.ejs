@@ -12,22 +12,22 @@
     <h1>To Do List</h1>
     <% if(todos.length) { %>
         <ul>
-            <% for(i of todos) { %>
+            <% todos.forEach(function(todo) { %>
                 <li>
-                    <%= i.todo %> -
-                        <%= i.done === true ? "Done" : "Not Done" %>
-                </li>
-                <form action="/:id?_method=DELETE" method="POST">
-                    <button>DELETE</button>
-                </form>
-                <% } %>
+                    <%= todo.todo %>
+                        -
+                        <%= todo.done ? 'done' : 'not done' %>
+                            <form action="/<%= todo.id %>?_method=DELETE" method="POST">
+                                <button type="submit">DELETE</button>
+                            </form>
+                            <% }) %>
         </ul>
         <% } else { %>
             <h3>There are currently no To-Dos, take a breather..</h3>
             <% } %>
                 <hr>
                 <form method="POST" action="/">
-                    <input type="text " name="newtodo" required>
+                    <input type="text " name="todo" required>
                     <button type="submit ">ADD TO DO</button>
                 </form>
 </body>

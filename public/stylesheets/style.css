@@ -10,3 +10,7 @@ a {
 form {
     display: inline;
 }
+
+li {
+    line-height: 30px;
+}
